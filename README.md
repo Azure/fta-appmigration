@@ -1,5 +1,19 @@
+# FastTrack for Azure - App Migration
 
-# Contributing
+This repo contains advice, links and resources for engineers who are working on App Migration projects in Azure. 
+
+👷🏻‍♀️🚧👷🏻‍♂️ (WIP)
+
+## About FastTrack for Azure
+
+## About Azure Migration Program for .NET
+
+## Checklists
+
+* [.NET App Migration Checklist](./docs/net-migration-checklist.md)
+
+
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -13,7 +27,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-# Legal Notices
+## Legal Notices
 
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
 in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
