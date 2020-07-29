@@ -86,7 +86,7 @@ or trademarks, whether by implication, estoppel or otherwise.
 [Microsoft FastTrack for Azure]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
 [Kickoff & Discovery]:./docs/discovery.md
 [Application Inventory]:./docs/app-inventory.md
-[Landing Zone]:./docs/landing-zone
+[Landing Zone]:./docs/landing-zone.md
 [Prepare]:./docs/prepare.md
 [Modernize]:./docs/modernize.md
 [Test & validate]:./docs/testing-validation.md

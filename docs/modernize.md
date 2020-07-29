@@ -20,8 +20,10 @@ Implement and test the required application and database changes to ensure the m
    parameter. Or, use SQL MI.
 1. Use SQL or Redis Session State provider
 
-
 ### Deploy to Test Env
+
+👷🏻‍♀️🚧👷🏻‍♂️ (WIP)
+
 ### Hybrid Connection for DB Access
 ### Smoke Tests + Minimum UAT Tests
 

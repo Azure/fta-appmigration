@@ -14,8 +14,6 @@ Start by documenting:
 
 Use this checklist to learn the per App needs.
 
-1. Scoring of complexity and project size (Wim)
-
 ### Web tier
 
 1. What version .NET Framework?
@@ -105,7 +103,7 @@ If the answer to any of these questions is yes, some refactoring and/or rearchit
 
 ## Inventory Prioritization
 
-Once inventory has been collated, prioritize the Apps into "waves". The first wave should contain a small number of apps as this first wave will require a large amount of "sprint zero" work that can be reused for subsequent waves.
+Once inventory has been collated, score each app by complexity and project size, then prioritize into "waves". The first wave should contain a small number of apps as a large amount of "sprint zero" work will be performed that can be reused for subsequent waves.
 
 [Azure Migration Center]:https://azure.microsoft.com/en-us/migration/
 [App Service Migration Assistant]:https://appmigration.microsoft.com/
