@@ -8,9 +8,36 @@ This repo contains advice, links and resources for engineers who are working on 
 
 ## About Azure Migration Program for .NET
 
-## Checklists
+## Migration checklists
 
-* [.NET App Migration Checklist](./docs/net-migration-checklist.md)
+![Flowchart showing example of Migration Phases for an App Migration project](./docs/images/migration-phases.png)<br/>_Figure: Example of Migration Phases for App Migration project_
+
+Follow the links below to engineer guidance, checklists and task lists for each phase of migration.
+
+#### Pre-migration
+
+* **Kickoff** [Technical discovery checklist]
+* **Skilling**
+* **Application Inventory** [App inventory checklist]
+* **Landing Zone** [Landing zone review]
+
+#### Migration waves
+
+For-each App + SQL backend:
+
+* **Prepare** [Architecture Design Review]
+* **Modernize**
+    * [App mod task list]
+    * [DB migration checklist]
+* **Test & validate** [Test & validation task list]
+* **Production deploy** [Prod deploy checklist]
+
+#### Post-migration
+
+* [Post go-live support checklist]
+
+## Links & more information
+
 
 
 ## Contributing
@@ -43,3 +70,14 @@ Privacy information can be found at https://privacy.microsoft.com/en-us/
 
 Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel or otherwise.
+
+<!-- LINKS -->
+[Technical discovery checklist]:./docs/discovery.md
+[App inventory checklist]:./docs/app-inventory.md
+[Landing zone]:./docs/landing-zone
+[Architecture Design Review]:./docs/architecture-review.md
+[App mod task list]:./docs/app-mod.md
+[DB migration checklist]:./docs/db-migration.md
+[Test & validation task list]:./docs/testing-validation.md
+[Prod deploy checklist]:./docs/prod-deploy.md
+[Post go-live support checklist]:./support.md

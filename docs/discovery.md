@@ -1,4 +1,4 @@
-# .NET App Migration Checklist
+# .NET App Migration Discovery Checklist
 
 Almost any web app can be migrated to Azure PaaS given enough time and effort. This checklist can be used to assess an App in the early stages of a migration project. It is a list of common technical scoping questions that an engineer may ask.
 
