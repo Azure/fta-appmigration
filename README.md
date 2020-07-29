@@ -1,6 +1,8 @@
 # FastTrack for Azure - App Migration
 
-Advice, links, checklists, task lists and other resources for engineers working on Application Migration projects in Azure. 
+Advice, links, checklists, task lists and other resources for engineers working on Application Migration projects in Azure.
+
+> ℹ Note that these docs are technical, intended to be read by engineers who are experienced in App migration, and who are overseeing the technical tasks of a migration project. These docs are not exhaustive and may not include information that is important to other project stakeholders.
 
 ## About FastTrack for Azure
 
