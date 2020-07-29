@@ -1,44 +1,54 @@
 # FastTrack for Azure - App Migration
 
-This repo contains advice, links and resources for engineers who are working on App Migration projects in Azure. 
-
-👷🏻‍♀️🚧👷🏻‍♂️ (WIP)
+Advice, links, checklists, task lists and other resources for engineers working on Application Migration projects in Azure. 
 
 ## About FastTrack for Azure
 
-## About Azure Migration Program for .NET
+**FastTrack for Azure** is a team of engineers and program managers who work closely with customers to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and most critical workloads deployed into public cloud today. 
 
-## Migration checklists
+Many customers and partners who are migrating applications to Azure will engage the FastTrack for Azure team to assist with their migration. The advice in this repo is based on "real world" experience gained from delivering thousands of engagements and hundreds of successful production deployments in Azure.
+
+> 📖 Visit **[Microsoft FastTrack for Azure]** to nominate your Azure migration project for FastTrack.
+
+## About AMP for .NET
+
+**Azure Migration Program (AMP)** is a fully managed migration program which offers best-practice guidance, direct access to Azure engineers, tools and subsidized partner services. AMP comes in three flavours: Datacenter (DC) migration, Windows Virtual Desktop (WVD) migration and AMP for .NET.
+
+AMP for .NET will migrate ASP.NET applications from IIS + SQL to Azure App Services to Azure SQL DB. Qualified customers will receive guidance, tools, and work with a Microsoft expert partner to complete their migration project. FastTrack for Azure engineers work in AMP projects to provide advice and guidance directly from Azure Engineering.
+
+> 📖 Visit **[Azure Migration Program]** to nominate your project for the AMP for .NET program.
+
+## Migration phases
+
+In this repo engineers will find advice, checklists and task-lists for each phase of an App migration project. These docs are intended as a guide for experience engineers and partners and are not exhaustive. Wherever possible we have linked to existing docs.
 
 ![Flowchart showing example of Migration Phases for an App Migration project](./docs/images/migration-phases.png)<br/>_Figure: Example of Migration Phases for App Migration project_
 
-Follow the links below to engineer guidance, checklists and task lists for each phase of migration.
+### Pre-migration
 
-#### Pre-migration
-
-* **Kickoff** [Technical discovery checklist]
+* **[Kickoff & Discovery]**
 * **Skilling**
-* **Application Inventory** [App inventory checklist]
-* **Landing Zone** [Landing zone review]
+* **[Application Inventory]**
+* **[Landing Zone]**
 
-#### Migration waves
+### Migration waves
 
 For-each App + SQL backend:
 
-* **Prepare** [Architecture Design Review]
-* **Modernize**
-    * [App mod task list]
-    * [DB migration checklist]
-* **Test & validate** [Test & validation task list]
-* **Production deploy** [Prod deploy checklist]
+* **[Prepare]**
+* **[Modernize]**
+* **[Test & validate]**
+* **[Production deploy]**
 
-#### Post-migration
+### Post-migration
 
-* [Post go-live support checklist]
+* **[Post go-live support]**
 
-## Links & more information
+## Links & references
 
-
+* [Migrate your .NET web app or service to Azure App Service]
+* [Introducing the App Service Migration Assistant for ASP.NET applications]
+* [App Service Migration Assistant Migration docs]
 
 ## Contributing
 
@@ -72,12 +82,17 @@ Microsoft and any contributors reserve all other rights, whether under their res
 or trademarks, whether by implication, estoppel or otherwise.
 
 <!-- LINKS -->
-[Technical discovery checklist]:./docs/discovery.md
-[App inventory checklist]:./docs/app-inventory.md
-[Landing zone]:./docs/landing-zone
-[Architecture Design Review]:./docs/architecture-review.md
-[App mod task list]:./docs/app-mod.md
-[DB migration checklist]:./docs/db-migration.md
-[Test & validation task list]:./docs/testing-validation.md
-[Prod deploy checklist]:./docs/prod-deploy.md
-[Post go-live support checklist]:./support.md
+[Azure Migration Program]:https://azure.microsoft.com/en-us/migration/migration-program/
+[Microsoft FastTrack for Azure]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
+[Kickoff & Discovery]:./docs/discovery.md
+[Application Inventory]:./docs/app-inventory.md
+[Landing Zone]:./docs/landing-zone
+[Prepare]:./docs/prepare.md
+[Modernize]:./docs/modernize.md
+[Test & validate]:./docs/testing-validation.md
+[Production deploy]:./docs/prod-deploy.md
+[Post go-live support]:./docs/support.md
+[Migrate your .NET web app or service to Azure App Service]:https://docs.microsoft.com/en-us/dotnet/azure/migration/app-service
+[App Service Migration Assistant Migration docs]:https://github.com/Azure/App-Service-Migration-Assistant/tree/master/MigrationDocs
+[99.9%]:https://uptime.is/99.9
+[Introducing the App Service Migration Assistant for ASP.NET applications]:https://azure.microsoft.com/en-us/blog/introducing-the-app-service-migration-assistant-for-asp-net-applications/
