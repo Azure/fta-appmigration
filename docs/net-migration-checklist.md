@@ -2,9 +2,8 @@
 
 Almost any web app can be migrated to Azure PaaS given enough time and effort. This checklist can be used to assess an App in the early stages of a migration project. It is a list of common technical scoping questions that an engineer may ask.
 
-The checklists on this page are for a .NET Framework _rehost_ scenario:
+The checklist on this page is for a .NET Framework _rehost_ scenario:
 
-* .NET (full) Framework (not .NET Core)
 * .NET Framework 3.5 or greater
 * Microsoft SQL Server version 2008 R2 or greater
 * Target state is Windows App Service Plans / App Service Environments (not Cloud Services, VMSS, AKS, Containers, Linux, IIS VMs)
@@ -16,7 +15,9 @@ What is currently deployed and where. What are the dependencies.
 
 > 💡 **[Azure Migration Center]** offers resources, tools and programmes for evaluating and performing Web App Migrations. 
 
-> 💡 Consider using an evaluation tool like the [App Service Migration Tool] or a third party tool to scan and generate a report on the current state. 
+> 💡 Use the **[App Service Migration Assistant]** or a third party tool to scan and generate a report on the current state of the Web App. 
+
+> 📖 Read [Migrate your .NET web app or service to Azure App Service] for an extensive list of App Service migration considerations.
 
 #### Web tier
 
@@ -30,12 +31,14 @@ What is currently deployed and where. What are the dependencies.
 1. How many websites?
 1. VMs have single role or are shared with SQL/WCF/Windows Services/Other?
 1. Do App Pools have user Identity (other than LOCALSYSTEM)?
+1. Any ISAPI filters?
+1. File system access?
 
 #### WCF services
 
 1. WCF services used? 
 1. Same VM (tier) as Web or separate?
-1. HTTPS bindings?
+1. HTTPS bindings? Any non HTTP bindings?
 1. What type auth?
 
 #### DB tier
@@ -45,6 +48,7 @@ What is currently deployed and where. What are the dependencies.
 1. How many DBs and what size?
 1. Sharded DBs? Shard master?
 1. SQL Server using local Timezone or UTC?
+1. SSRS? SSAS? SSIS?
 
 #### Networking & Security
 
@@ -68,15 +72,41 @@ What is currently deployed and where. What are the dependencies.
 1. Port 25 open for outbound?
 
 
-#### Compatibility Checks
+## Compatibility Checks
+
+If the answer to any of these questions is yes, some refactoring and/or rearchitecting may be required to make the solution compatible with Azure App Services.
+
+#### Web
 
 1. Any MSI installed components?
-1. Any GAC'ed DLLs
+1. Any GAC'ed DLLs?
+1. Any COM or COM+ components?
 1. Any binary references?
+1. Only ports 80 and 443 used?
+
+#### DB
+
 1. Any GO statements in SQL?
 1. Any cross-DB joins in SQL?
-1. Any .NET CLR Functions
+1. Any .NET CLR Functions in SQL?
+1. Any SQL MSDTC?
 
+## Business requirements
+
+What are the current vs. target business (non-functional) requirements? 
+
+### Performance
+
+1. Concurrent and total users?
+1. Peak requests per minute/second (RPM/RPS)?
+1. RPM per (web) core?
+1. DB requests per Page request?
+ 
+### Reliability
+
+1. Recovery time objecttive (RTO)?
+1. Recovery point objective (RPO)? 
+1. System uptime (as percentage), e.g. [99.9%]
 
 ## Target State
 
@@ -92,114 +122,14 @@ What is currently deployed and where. What are the dependencies.
    1. Elastic Pool?
 1. Azure SQL MI?
 
+## Links & references
 
-## Compatibility Tasks
-
-1. REFACTOR: Nuget packages for all references
-1. REFACTOR, REARCHITECT: Split non-packagable references into seperate de-coupled services (Crystal
-   Reports, ABCPDF...)
-1. REHOST / REFACTOR: Remove GO statements from SQL or use SQL MI
-1. REFACTOR, REARCHITECT: Split sprocs, views and queries that rely on cross-db joins into multiple
-   Db calls at the Data Layer. Or use SQL MI.
-1. REHOST: Turn on simple-auth with AAD for authentication
-1. REHOST: Replace SMTP service with SendGrid. Refactor send mail calls if not configurable with AppSettings.
-1. REHOST / REFACTOR: Refactor DateTime helper to support UTC time, Refactor sprocs to take a `@now`
-   parameter. Or, use SQL MI.
-1. Use SQL or Redis Session State provider (is there a Cosmos DB sessio state provider)
-
-
-## Cloud Adoption Framework (CAF) and Landing Zone
-
-What CAF and Landing zone tasks need to be complete to enable a successful migration? 
-
-### Blueprint
-
-1. Hub & spoke Subscriptions
-1. Hub & spoke network
-1. Azure Security Center Standard
-1. Azure Monitor
-1. Application Insights
-
-### Networking checks
-
-1. Connectivity to on-prem services
-1. HTTP Internet access inbound
-1. Firewall
-1. WAF
-1. DDOS
-
-### Networking tasks
-
-1. Express Route private pairing or Site-to-site VPN
-1. App Services VPN Integration
-1. Express Route public pairing
-1. Azure Firewall or NVA
-1. Azure App Gateway + WAF or Azure Front door
-1. DDoS standard
-
-### Monitoring tasks
-
-1. Azure Monitor: Perfmon - SQL and IIS style counters
-1. Application Insights: Performance, Errors
-
-### Security tasks
-
-1. Azure Security Center Standard
-
-## Apps Platform
-
-1. Identity
-1. App Deployment pipeline
-1. Metrics
-1. Logging
-1. APM
-1. Hosting
-
-## Tooling features
-
-What features should be prioritised for App Migration and Modernisation tooling?
-
-### Migration
-
-1. App type, version, framework, framework version
-1. How many tiers
-1. How many apps in IIS, dependencies
-1. Virtual directories
-1. WCF endpoints and types
-1. Logging configuration and sinks
-1. APM SDK version and details (Application Insights, New Relic)
-1. DB type
-1. Average RPM
-1. Core count, percent used by w3wp
-1. RAM used by w3wp
-1. Remote dependencies (WCF, SQL, HTTP)
-1. In-proc dependencies (DLLs, GAC, Nuget)
-1. MSI installed libraries / frameworks
-1. DB count
-1. Cross-DB joins
-1. SQL: Go statements
-1. SQL Use of GETDATE()
-1. DateTime: use of non-UTC times (DateTime.Now, type = local)
-1. SMTP traffic and service
-1. ASP Auth Framework
-1. Check for NTLM or AD
-1. Check for passwords in SQL Table
-1. DNS settings
-1. Root CA, SSL certs, etc
-1. Can server see Internet on 443, 80, etc
-1. Default gateway
-1. DNS server and settings
-1. Scoring of complexity and project size (Wim)
-
-### Modernisation
-
-1. Percent sync vs async entry points
-1. CDN used?
-1. Output cache used?
-1. Caching objects used?
-1. Session state, Web Forms Session
-
-## Links
+* [Introducing the App Service Migration Assistant for ASP.NET applications]
+* [App Service Migration Assistant Migration docs]
 
 [Azure Migration Center]:https://azure.microsoft.com/en-us/migration/
-[App Service Migration Tool]:https://appmigration.microsoft.com/
+[App Service Migration Assistant]:https://appmigration.microsoft.com/
+[Migrate your .NET web app or service to Azure App Service]:https://docs.microsoft.com/en-us/dotnet/azure/migration/app-service
+[App Service Migration Assistant Migration docs]:https://github.com/Azure/App-Service-Migration-Assistant/tree/master/MigrationDocs
+[99.9%]:https://uptime.is/99.9
+[Introducing the App Service Migration Assistant for ASP.NET applications]:https://azure.microsoft.com/en-us/blog/introducing-the-app-service-migration-assistant-for-asp-net-applications/
