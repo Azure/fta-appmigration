@@ -10,7 +10,7 @@ Advice, links, checklists, task lists and other resources for engineers working 
 
 Many customers and partners who are migrating applications to Azure will engage the FastTrack for Azure team to assist with their migration. The advice in this repo is based on "real world" experience gained from delivering thousands of engagements and hundreds of successful production deployments in Azure.
 
-> 📖 Visit **[Microsoft FastTrack for Azure]** to nominate your Azure migration project for FastTrack.
+> 📖 Visit **[Microsoft FastTrack for Azure]** to learn more about FastTrack
 
 ## About AMP for .NET
 
@@ -18,7 +18,7 @@ Many customers and partners who are migrating applications to Azure will engage 
 
 AMP for .NET will migrate ASP.NET applications from IIS + SQL to Azure App Services to Azure SQL DB. Qualified customers will receive guidance, tools, and work with a Microsoft expert partner to complete their migration project. FastTrack for Azure engineers work in AMP projects to provide advice and guidance directly from Azure Engineering.
 
-> 📖 Visit **[Azure Migration Program]** to nominate your project for the AMP for .NET program.
+> 📖 Visit **[Azure Migration Program]** to learn more about the AMP for .NET program
 
 ## Migration phases
 
@@ -51,6 +51,9 @@ For-each App + SQL backend:
 * [Migrate your .NET web app or service to Azure App Service]
 * [Introducing the App Service Migration Assistant for ASP.NET applications]
 * [App Service Migration Assistant Migration docs]
+* <https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/reference/fundamental-concepts/hosting-hierarchy>
+* <https://docs.microsoft.com/en-us/azure/architecture/example-scenario/gateway/firewall-application-gateway>
+* <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree>
 
 ## Contributing
 
