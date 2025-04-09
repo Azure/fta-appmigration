@@ -1,3 +1,7 @@
+# IMPORTANT
+
+With the disbandment of the the FastTrack for Azure organization within Microsoft, this respository is being archived and will no longer be maintained.
+
 # FastTrack for Azure - App Migration
 
 Advice, links, checklists, task lists and other resources for engineers working on Application Migration projects in Azure.
